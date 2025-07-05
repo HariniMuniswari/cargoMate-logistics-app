@@ -17,23 +17,31 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
+      padding: 40px 10px;
+      background: linear-gradient(to right, #f0f8ff, #e6f2ff);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-      padding: 20px;
     }
 
     .container {
-      max-width: 400px;
-      background: rgba(255, 255, 255, 0.95);
-      padding: 20px;
-      margin: auto;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #aaa;
+      width: 100%;
+      max-width: 450px;
+      background: rgba(255, 255, 255, 0.97);
+      padding: 25px;
+      margin: 20px auto;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     }
 
     h2 {
       text-align: center;
+      color: #003366;
+      margin-bottom: 15px;
     }
 
     input, select, button {
@@ -42,13 +50,14 @@
       margin: 8px 0;
       border-radius: 6px;
       border: 1px solid #ccc;
+      font-size: 14px;
     }
 
     button {
       background-color: #007bff;
       color: white;
       border: none;
-      cursor: pointer;
+      font-weight: bold;
     }
 
     button:hover {
@@ -57,6 +66,7 @@
 
     #logoutBtn {
       background-color: #dc3545;
+      margin-top: 15px;
     }
 
     #logoutBtn:hover {
@@ -72,6 +82,7 @@
       padding: 15px;
       background: #e7f5ff;
       border-radius: 6px;
+      font-size: 14px;
     }
 
     #ratingChartContainer {
@@ -150,12 +161,10 @@
       measurementId: "G-J902P9LM8S"
     };
 
-    // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
     const db = firebase.firestore();
 
-    // Auth functions
     function signUp() {
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
